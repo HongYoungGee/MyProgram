@@ -3,13 +3,15 @@
 
 setClipboard()
 {
-	random,x,1,3
+	random,x,1,4
 	if(x=1)
 		return "안녕하세요!!!"
 	else if(x=2)
-		return "반갑습니다!!!"
+		return "오늘 하루도 화이팅 입니다 ㅎㅎ"
 	else if(x=3)
 		return "잘 부탁드립니다!!"
+	else if(x=4)
+		return "좋은 하루 되세요 ㅎㅎ"
 	return
 }
 
@@ -38,14 +40,17 @@ ClickImage(filename)
 f2::
 loop
 {
-loop
+loop 10
 {
 	imagesearch, x,y, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 regist.bmp
 	if (ErrorLevel = 0)
 	{
 		break
 	}
-	send,{pgdn}
+	if (errorlevel = 1)
+	{
+		send,{pgdn}
+	}
 	sleep,(650)
 }
 
@@ -66,6 +71,7 @@ mousemove,1,1
 
 sleep,(10000)
 ClickImage("ok.bmp")
+ClickImage("ok2.bmp")
 
 sleep,(5212)
 ClickImage("next.bmp")
