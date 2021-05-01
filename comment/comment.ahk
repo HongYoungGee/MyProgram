@@ -3,7 +3,7 @@
 
 setClipboard()
 {
-	random,x,1,4
+	random,x,1,5
 	if(x=1)
 		return "안녕하세요!!!"
 	else if(x=2)
@@ -12,6 +12,8 @@ setClipboard()
 		return "잘 부탁드립니다!!"
 	else if(x=4)
 		return "좋은 하루 되세요 ㅎㅎ"
+	else if(x=5)
+		return "어서오세요~"
 	return
 }
 
@@ -35,6 +37,12 @@ ClickImage(filename)
 		click
 		sleep,(100)
 	}
+}
+
+DelayRandom()
+{
+	random,x,1000,5000
+	sleep x
 }
 
 f2::
@@ -74,6 +82,7 @@ ClickImage("ok.bmp")
 ClickImage("ok2.bmp")
 
 sleep,(5212)
+DelayRandom()
 ClickImage("next.bmp")
 
 sleep,(20254)
