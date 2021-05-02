@@ -3,7 +3,7 @@
 
 setClipboard()
 {
-	random,x,1,5
+	random,x,1,7
 	if(x=1)
 		return "안녕하세요!!!"
 	else if(x=2)
@@ -14,6 +14,10 @@ setClipboard()
 		return "좋은 하루 되세요 ㅎㅎ"
 	else if(x=5)
 		return "어서오세요~"
+	else if(x=6)
+		return "인사드려요 ㅎㅎ"
+	else if(x=7)
+		return "반가워요"
 	return
 }
 
@@ -78,14 +82,35 @@ ClickImage("regist.bmp")
 mousemove,1,1
 
 sleep,(10000)
-ClickImage("ok.bmp")
-ClickImage("ok2.bmp")
 
-sleep,(5212)
+
+sleep,(10212)
+
+
+loop
+{
+	ClickImage("ok.bmp")
+	ClickImage("ok2.bmp")
+	imagesearch, x,y, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 next.bmp
+	if (ErrorLevel = 0)
+	{
+		mousemove, %x%, %y%
+		sleep,(100)
+		click
+		sleep,(100)
+		break
+	}
+}
+
+sleep,(10254)
+imagesearch, x,y, 0, 0, A_ScreenWidth, A_ScreenHeight, *10 error.bmp
+if (ErrorLevel = 0)
+{
+	send,{f5}
+	sleep,(10000)
+}
+sleep,(5254)
 DelayRandom()
-ClickImage("next.bmp")
-
-sleep,(20254)
 }
 return
 
