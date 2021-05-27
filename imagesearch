@@ -1,0 +1,10 @@
+CoordMode, Mouse, screen
+CoordMode, Pixel, screen
+
+SysGet, VirtualScreenWidth, 78
+SysGet, VirtualScreenHeight, 79
+SysGet, VirtualScreenLeft, 76
+SysGet, VirtualScreenTop, 77
+
+ImageSearch, vx2, vy2, VirtualScreenLeft, VirtualScreenTop
+		,VirtualScreenLeft+VirtualScreenWidth, VirtualScreenTop+VirtualScreenHeight, *20 image1.bmp
